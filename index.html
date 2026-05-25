@@ -171,7 +171,7 @@ const highScoreEl = document.getElementById("highScore");;
   image.onload = () => {
     drawNextPreview();
   };
-  image.src = "sushi-images/" + sushi.img;
+  image.src =sushi.img;
   sushiImages[sushi.img] = image;
 }
 const evolutionList = document.getElementById("evolutionList");
@@ -180,7 +180,7 @@ function renderEvolutionList() {
   evolutionList.innerHTML = sushiList
     .map((s, i) => `
       <span class="evoItem">
-        <img class="evoIcon" src="sushi-images/${s.img}">
+        <img class="evoIcon" src="${s.img}">
         ${i + 1}. ${s.name}
       </span>
     `)
