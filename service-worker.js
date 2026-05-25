@@ -1,32 +1,21 @@
-const CACHE_NAME = "sushimamire-v7";
-
-const FILES_TO_CACHE = [
-  "./",
-  "./index.html",
-  "./manifest.json",
-  "./icon.png",
-  "./sushi-images/tamago.png",
-  "./sushi-images/inari.png",
-  "./sushi-images/kappa.png",
-  "./sushi-images/tekkamaki.png",
-  "./sushi-images/ebi.png",
-  "./sushi-images/ikura.png",
-  "./sushi-images/uni.png",
-  "./sushi-images/maguro.png",
-  "./sushi-images/otoro.png",
-  "./sushi-images/oke.png"
-];
-
-self.addEventListener("install", event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(FILES_TO_CACHE))
-  );
-});
-
-self.addEventListener("fetch", event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
-  );
-});
+{
+  "name": "すしまみれ",
+  "short_name": "すしまみれ",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fff3dc",
+  "theme_color": "#d62828",
+  "orientation": "portrait",
+ "icons": [
+  {
+    "src": "icon.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  },
+  {
+    "src": "icon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }
+]
+}
