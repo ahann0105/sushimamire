@@ -180,7 +180,7 @@ function renderEvolutionList() {
   evolutionList.innerHTML = sushiList
     .map((s, i) => `
       <span class="evoItem">
-        <img class="evoIcon" src="sushi-images/${s.img}">
+        <img class="evoIcon" src="${s.img}">
         ${i + 1}. ${s.name}
       </span>
     `)
